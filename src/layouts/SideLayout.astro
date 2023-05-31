@@ -1,0 +1,15 @@
+---
+const { title, version } = Astro.props;
+---
+<div class="flex h-screen w-screen">
+  <aside class="flex-none w-48 bg-green-200 flex flex-col pt-4">
+    <li class="self-center list-none">{title}</li>
+    <li class="self-center list-none">Version: {version}</li>
+  </aside>
+  <main class="grow w-max p-8 prose overflow-y-auto max-w-none">
+    <!-- <div class="p-8 prose overflow-hidden overflow-y-auto h-full"> -->
+      This is the current passage.
+      <slot />
+    <!-- </div> -->
+  </main>
+</div>

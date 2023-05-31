@@ -1,0 +1,31 @@
+---
+import SideLayout from "../layouts/SideLayout.astro"
+import { getCollection, getEntry,  } from 'astro:content';
+
+const passages = await getCollection("passage");
+
+---
+<SideLayout title="Game Demo" version="1.0">
+  <h2>Welcome to the game</h2>
+  <h3>Passages:</h3>
+  {passages.map((p) => (
+    <li>
+    <a href={`/passage/${p.slug}`}>{p.slug}</a>
+    </li>
+  ))}
+  <p>This is demo passage.</p>
+  <br>
+  <p>This is to test a space.</p>
+  <br>
+  <p>
+    <li>This is to test a list</li>
+    <li>This is to test a list</li>
+    <li>This is to test a list</li>
+  </p>
+
+  <pre>
+    <code>
+    This is to test a code block.
+    </code>
+  </pre>
+</SideLayout>
